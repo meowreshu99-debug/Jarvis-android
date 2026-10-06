@@ -1,0 +1,40 @@
+* { box-sizing: border-box; }
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #e9f2ff;
+  background: #03050b;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 15%, rgba(62, 139, 255, .18), transparent 30%),
+    radial-gradient(circle at 20% 80%, rgba(0, 220, 255, .08), transparent 30%),
+    #03050b;
+}
+.app { width: min(900px, 100%); min-height: 100vh; margin: auto; padding: 20px; display: flex; flex-direction: column; }
+.topbar { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.eyebrow { font-size: 10px; letter-spacing: .25em; opacity: .55; }
+h1 { margin: 4px 0 0; font-size: clamp(25px, 6vw, 42px); letter-spacing: .08em; }
+.status { font-size: 11px; letter-spacing: .12em; opacity: .8; }
+.dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:#7fffd4; box-shadow:0 0 15px #7fffd4; margin-right:6px; }
+.orb-panel { text-align:center; padding: 38px 0 24px; }
+.orb { width: 170px; height:170px; margin:auto; border-radius:50%; display:grid; place-items:center; border:1px solid rgba(130,190,255,.45); box-shadow: 0 0 40px rgba(45,145,255,.25), inset 0 0 45px rgba(45,145,255,.12); animation:pulse 3s ease-in-out infinite; }
+.orb-core { width:70px; height:70px; border-radius:50%; background:radial-gradient(circle, #dff8ff, #45a8ff 35%, #153a87 70%, transparent 71%); box-shadow:0 0 35px #42a5ff; }
+@keyframes pulse { 50% { transform:scale(1.04); box-shadow:0 0 65px rgba(45,145,255,.4), inset 0 0 55px rgba(45,145,255,.18); } }
+.listening { margin-top:18px; font-size:11px; letter-spacing:.28em; color:#8bc7ff; }
+.orb-panel p { opacity:.45; font-size:13px; margin:7px 0 0; }
+.chat { flex:1; min-height:250px; max-height:48vh; overflow:auto; padding: 8px 2px 18px; }
+.message { max-width: 85%; margin: 10px 0; padding: 13px 15px; border:1px solid rgba(150,190,240,.12); border-radius:16px; background:rgba(255,255,255,.035); }
+.message.user { margin-left:auto; background:rgba(52,130,255,.11); }
+.message p { margin:5px 0 0; line-height:1.5; }
+.label { font-size:9px; letter-spacing:.2em; opacity:.5; }
+.composer { display:flex; gap:8px; padding:10px 0; position:sticky; bottom:0; background:linear-gradient(transparent,#03050b 25%); }
+.composer input { flex:1; min-width:0; border:1px solid rgba(140,190,255,.2); border-radius:18px; padding:14px 16px; background:rgba(255,255,255,.055); color:white; outline:none; }
+.composer button { border:1px solid rgba(140,190,255,.2); background:rgba(255,255,255,.055); color:white; border-radius:16px; width:48px; min-width:48px; }
+.send { font-size:18px; }
+.quick { display:flex; gap:8px; overflow:auto; padding-bottom:10px; }
+.quick button { white-space:nowrap; border:1px solid rgba(140,190,255,.15); background:transparent; color:#9dcaff; border-radius:999px; padding:9px 12px; font-size:10px; letter-spacing:.12em; }
+footer { text-align:center; opacity:.28; font-size:10px; padding:8px; }
+@media (min-width: 700px) { .app { padding:32px 40px; } .orb-panel { padding:55px 0 30px; } .chat { max-height:42vh; } }
+@media (max-width: 420px) { .app { padding:16px; } .orb { width:140px; height:140px; } .orb-core { width:58px; height:58px; } }
