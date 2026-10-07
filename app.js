@@ -7,7 +7,7 @@ const listening = document.querySelector("#listening");
 function addMessage(role, text) {
   const el = document.createElement("div");
   el.className = `message ${role}`;
-  el.innerHTML = `<span class="label">${role === "user" ? "YOU" : "JARVIS"}</span><p></p>`;
+  el.innerHTML = `<span class="label">${role === "user" ? "YOU" : "RESHU"}</span><p></p>`;
   el.querySelector("p").textContent = text;
   chat.appendChild(el);
   chat.scrollTop = chat.scrollHeight;
